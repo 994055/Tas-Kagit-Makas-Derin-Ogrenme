@@ -1,0 +1,2326 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ui version="4.0">
+ <class>MainWindow</class>
+ <widget class="QMainWindow" name="MainWindow">
+  <property name="geometry">
+   <rect>
+    <x>0</x>
+    <y>0</y>
+    <width>2023</width>
+    <height>1012</height>
+   </rect>
+  </property>
+  <property name="windowTitle">
+   <string>MainWindow</string>
+  </property>
+  <widget class="QWidget" name="centralwidget">
+   <widget class="QTabWidget" name="tabWidget">
+    <property name="geometry">
+     <rect>
+      <x>0</x>
+      <y>0</y>
+      <width>2021</width>
+      <height>971</height>
+     </rect>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">background-color:rgb(196, 255, 216)</string>
+    </property>
+    <property name="currentIndex">
+     <number>2</number>
+    </property>
+    <widget class="QWidget" name="tab">
+     <attribute name="title">
+      <string>Hold Out Model Eğitimi</string>
+     </attribute>
+     <widget class="QPushButton" name="btnveri">
+      <property name="geometry">
+       <rect>
+        <x>10</x>
+        <y>10</y>
+        <width>221</width>
+        <height>51</height>
+       </rect>
+      </property>
+      <property name="font">
+       <font>
+        <pointsize>16</pointsize>
+       </font>
+      </property>
+      <property name="styleSheet">
+       <string notr="true">background-color:rgb(193, 193, 193)</string>
+      </property>
+      <property name="text">
+       <string>Veri Seti Oluştur</string>
+      </property>
+     </widget>
+     <widget class="QLabel" name="label_2">
+      <property name="geometry">
+       <rect>
+        <x>10</x>
+        <y>500</y>
+        <width>161</width>
+        <height>41</height>
+       </rect>
+      </property>
+      <property name="font">
+       <font>
+        <pointsize>14</pointsize>
+       </font>
+      </property>
+      <property name="styleSheet">
+       <string notr="true">background-color:rgb(255, 57, 77)</string>
+      </property>
+      <property name="text">
+       <string>Model Seçiniz</string>
+      </property>
+      <property name="alignment">
+       <set>Qt::AlignCenter</set>
+      </property>
+     </widget>
+     <widget class="QComboBox" name="cmbModel">
+      <property name="geometry">
+       <rect>
+        <x>10</x>
+        <y>550</y>
+        <width>261</width>
+        <height>41</height>
+       </rect>
+      </property>
+      <property name="font">
+       <font>
+        <pointsize>14</pointsize>
+       </font>
+      </property>
+      <property name="styleSheet">
+       <string notr="true">background-color: rgb(236, 255, 112);</string>
+      </property>
+      <property name="currentText">
+       <string>Benim CNN Modelim</string>
+      </property>
+      <item>
+       <property name="text">
+        <string>Benim CNN Modelim</string>
+       </property>
+      </item>
+      <item>
+       <property name="text">
+        <string>ResNet50</string>
+       </property>
+      </item>
+      <item>
+       <property name="text">
+        <string>VGG16</string>
+       </property>
+      </item>
+     </widget>
+     <widget class="QLabel" name="lblACC">
+      <property name="geometry">
+       <rect>
+        <x>10</x>
+        <y>660</y>
+        <width>551</width>
+        <height>31</height>
+       </rect>
+      </property>
+      <property name="font">
+       <font>
+        <pointsize>16</pointsize>
+       </font>
+      </property>
+      <property name="styleSheet">
+       <string notr="true">color:rgb(0, 179, 27)</string>
+      </property>
+      <property name="text">
+       <string>Accuracy:</string>
+      </property>
+     </widget>
+     <widget class="QLabel" name="lblSen">
+      <property name="geometry">
+       <rect>
+        <x>10</x>
+        <y>700</y>
+        <width>521</width>
+        <height>31</height>
+       </rect>
+      </property>
+      <property name="font">
+       <font>
+        <pointsize>16</pointsize>
+       </font>
+      </property>
+      <property name="styleSheet">
+       <string notr="true">color:rgb(0, 179, 27)</string>
+      </property>
+      <property name="text">
+       <string>Sensitivity:</string>
+      </property>
+     </widget>
+     <widget class="QLabel" name="lblSpe">
+      <property name="geometry">
+       <rect>
+        <x>10</x>
+        <y>740</y>
+        <width>521</width>
+        <height>31</height>
+       </rect>
+      </property>
+      <property name="font">
+       <font>
+        <pointsize>16</pointsize>
+       </font>
+      </property>
+      <property name="styleSheet">
+       <string notr="true">color:rgb(0, 179, 27)</string>
+      </property>
+      <property name="text">
+       <string>Specificity: </string>
+      </property>
+     </widget>
+     <widget class="QPushButton" name="btnModelEgit">
+      <property name="geometry">
+       <rect>
+        <x>10</x>
+        <y>610</y>
+        <width>141</width>
+        <height>41</height>
+       </rect>
+      </property>
+      <property name="font">
+       <font>
+        <pointsize>16</pointsize>
+       </font>
+      </property>
+      <property name="styleSheet">
+       <string notr="true">background-color:rgb(193, 193, 193)</string>
+      </property>
+      <property name="text">
+       <string>Model Eğit</string>
+      </property>
+     </widget>
+     <widget class="QTableWidget" name="tblX">
+      <property name="geometry">
+       <rect>
+        <x>590</x>
+        <y>50</y>
+        <width>991</width>
+        <height>311</height>
+       </rect>
+      </property>
+      <property name="styleSheet">
+       <string notr="true">background-color:rgb(255, 255, 127);</string>
+      </property>
+     </widget>
+     <widget class="QLabel" name="lblVeriSeti_4">
+      <property name="geometry">
+       <rect>
+        <x>590</x>
+        <y>0</y>
+        <width>281</width>
+        <height>41</height>
+       </rect>
+      </property>
+      <property name="font">
+       <font>
+        <pointsize>14</pointsize>
+       </font>
+      </property>
+      <property name="styleSheet">
+       <string notr="true">background-color:rgb(255, 170, 127)</string>
+      </property>
+      <property name="text">
+       <string>Görsellerin piksel değerleri</string>
+      </property>
+      <property name="alignment">
+       <set>Qt::AlignCenter</set>
+      </property>
+     </widget>
+     <widget class="QTableWidget" name="tblY">
+      <property name="geometry">
+       <rect>
+        <x>1620</x>
+        <y>50</y>
+        <width>191</width>
+        <height>311</height>
+       </rect>
+      </property>
+      <property name="styleSheet">
+       <string notr="true">background-color:rgb(255, 255, 127);</string>
+      </property>
+     </widget>
+     <widget class="QLabel" name="lblVeriSeti_5">
+      <property name="geometry">
+       <rect>
+        <x>1650</x>
+        <y>0</y>
+        <width>131</width>
+        <height>41</height>
+       </rect>
+      </property>
+      <property name="font">
+       <font>
+        <pointsize>14</pointsize>
+       </font>
+      </property>
+      <property name="styleSheet">
+       <string notr="true">background-color:rgb(255, 170, 127)</string>
+      </property>
+      <property name="text">
+       <string>Class Bilgisi</string>
+      </property>
+      <property name="alignment">
+       <set>Qt::AlignCenter</set>
+      </property>
+     </widget>
+     <widget class="QTableWidget" name="tblXTrain">
+      <property name="geometry">
+       <rect>
+        <x>590</x>
+        <y>420</y>
+        <width>491</width>
+        <height>211</height>
+       </rect>
+      </property>
+      <property name="styleSheet">
+       <string notr="true">background-color:rgb(255, 255, 127);</string>
+      </property>
+     </widget>
+     <widget class="QLabel" name="lblVeriSeti_6">
+      <property name="geometry">
+       <rect>
+        <x>590</x>
+        <y>370</y>
+        <width>111</width>
+        <height>41</height>
+       </rect>
+      </property>
+      <property name="font">
+       <font>
+        <pointsize>14</pointsize>
+       </font>
+      </property>
+      <property name="styleSheet">
+       <string notr="true">background-color:rgb(255, 170, 127)</string>
+      </property>
+      <property name="text">
+       <string>X train</string>
+      </property>
+      <property name="alignment">
+       <set>Qt::AlignCenter</set>
+      </property>
+     </widget>
+     <widget class="QTableWidget" name="tblYTrain">
+      <property name="geometry">
+       <rect>
+        <x>1130</x>
+        <y>420</y>
+        <width>191</width>
+        <height>211</height>
+       </rect>
+      </property>
+      <property name="styleSheet">
+       <string notr="true">background-color:rgb(255, 255, 127);</string>
+      </property>
+     </widget>
+     <widget class="QLabel" name="lblVeriSeti_7">
+      <property name="geometry">
+       <rect>
+        <x>1140</x>
+        <y>370</y>
+        <width>121</width>
+        <height>41</height>
+       </rect>
+      </property>
+      <property name="font">
+       <font>
+        <pointsize>14</pointsize>
+       </font>
+      </property>
+      <property name="styleSheet">
+       <string notr="true">background-color:rgb(255, 170, 127)</string>
+      </property>
+      <property name="text">
+       <string>Y train</string>
+      </property>
+      <property name="alignment">
+       <set>Qt::AlignCenter</set>
+      </property>
+     </widget>
+     <widget class="QLabel" name="lblVeriSeti_8">
+      <property name="geometry">
+       <rect>
+        <x>1140</x>
+        <y>640</y>
+        <width>121</width>
+        <height>41</height>
+       </rect>
+      </property>
+      <property name="font">
+       <font>
+        <pointsize>14</pointsize>
+       </font>
+      </property>
+      <property name="styleSheet">
+       <string notr="true">background-color:rgb(255, 170, 127)</string>
+      </property>
+      <property name="text">
+       <string>Y test</string>
+      </property>
+      <property name="alignment">
+       <set>Qt::AlignCenter</set>
+      </property>
+     </widget>
+     <widget class="QLabel" name="lblVeriSeti_9">
+      <property name="geometry">
+       <rect>
+        <x>590</x>
+        <y>640</y>
+        <width>111</width>
+        <height>41</height>
+       </rect>
+      </property>
+      <property name="font">
+       <font>
+        <pointsize>14</pointsize>
+       </font>
+      </property>
+      <property name="styleSheet">
+       <string notr="true">background-color:rgb(255, 170, 127)</string>
+      </property>
+      <property name="text">
+       <string>X test</string>
+      </property>
+      <property name="alignment">
+       <set>Qt::AlignCenter</set>
+      </property>
+     </widget>
+     <widget class="QTableWidget" name="tblYTest">
+      <property name="geometry">
+       <rect>
+        <x>1130</x>
+        <y>690</y>
+        <width>191</width>
+        <height>221</height>
+       </rect>
+      </property>
+      <property name="styleSheet">
+       <string notr="true">background-color:rgb(255, 255, 127);</string>
+      </property>
+     </widget>
+     <widget class="QTableWidget" name="tblXTest">
+      <property name="geometry">
+       <rect>
+        <x>590</x>
+        <y>690</y>
+        <width>491</width>
+        <height>221</height>
+       </rect>
+      </property>
+      <property name="styleSheet">
+       <string notr="true">background-color:rgb(255, 255, 127);</string>
+      </property>
+     </widget>
+     <widget class="QPushButton" name="btnGrafikEgitim">
+      <property name="geometry">
+       <rect>
+        <x>10</x>
+        <y>790</y>
+        <width>151</width>
+        <height>61</height>
+       </rect>
+      </property>
+      <property name="font">
+       <font>
+        <pointsize>12</pointsize>
+       </font>
+      </property>
+      <property name="styleSheet">
+       <string notr="true">background-color:rgb(255, 57, 93)</string>
+      </property>
+      <property name="text">
+       <string>ACC Grafiği 
+Görüntüle</string>
+      </property>
+     </widget>
+     <widget class="QTableWidget" name="tblYVal">
+      <property name="geometry">
+       <rect>
+        <x>1500</x>
+        <y>700</y>
+        <width>191</width>
+        <height>211</height>
+       </rect>
+      </property>
+      <property name="styleSheet">
+       <string notr="true">background-color:rgb(255, 255, 127);</string>
+      </property>
+     </widget>
+     <widget class="QLabel" name="lblVeriSeti_11">
+      <property name="geometry">
+       <rect>
+        <x>1540</x>
+        <y>650</y>
+        <width>111</width>
+        <height>41</height>
+       </rect>
+      </property>
+      <property name="font">
+       <font>
+        <pointsize>14</pointsize>
+       </font>
+      </property>
+      <property name="styleSheet">
+       <string notr="true">background-color:rgb(255, 170, 127)</string>
+      </property>
+      <property name="text">
+       <string>Y val</string>
+      </property>
+      <property name="alignment">
+       <set>Qt::AlignCenter</set>
+      </property>
+     </widget>
+     <widget class="QLabel" name="lblVeriSeti_16">
+      <property name="geometry">
+       <rect>
+        <x>1540</x>
+        <y>370</y>
+        <width>111</width>
+        <height>41</height>
+       </rect>
+      </property>
+      <property name="font">
+       <font>
+        <pointsize>14</pointsize>
+       </font>
+      </property>
+      <property name="styleSheet">
+       <string notr="true">background-color:rgb(255, 170, 127)</string>
+      </property>
+      <property name="text">
+       <string>X val</string>
+      </property>
+      <property name="alignment">
+       <set>Qt::AlignCenter</set>
+      </property>
+     </widget>
+     <widget class="QTableWidget" name="tblXVal">
+      <property name="geometry">
+       <rect>
+        <x>1350</x>
+        <y>420</y>
+        <width>491</width>
+        <height>211</height>
+       </rect>
+      </property>
+      <property name="styleSheet">
+       <string notr="true">background-color:rgb(255, 255, 127);</string>
+      </property>
+     </widget>
+     <widget class="QGroupBox" name="groupBox_4">
+      <property name="geometry">
+       <rect>
+        <x>10</x>
+        <y>430</y>
+        <width>351</width>
+        <height>61</height>
+       </rect>
+      </property>
+      <property name="title">
+       <string/>
+      </property>
+      <widget class="QRadioButton" name="rbModelCheckpoint">
+       <property name="geometry">
+        <rect>
+         <x>10</x>
+         <y>20</y>
+         <width>161</width>
+         <height>20</height>
+        </rect>
+       </property>
+       <property name="font">
+        <font>
+         <pointsize>10</pointsize>
+        </font>
+       </property>
+       <property name="text">
+        <string>Model Checkpoint</string>
+       </property>
+      </widget>
+      <widget class="QRadioButton" name="rbErkenDurdurma">
+       <property name="geometry">
+        <rect>
+         <x>190</x>
+         <y>20</y>
+         <width>131</width>
+         <height>20</height>
+        </rect>
+       </property>
+       <property name="font">
+        <font>
+         <pointsize>10</pointsize>
+        </font>
+       </property>
+       <property name="text">
+        <string>Early Stopping</string>
+       </property>
+      </widget>
+     </widget>
+     <widget class="QLabel" name="label_16">
+      <property name="geometry">
+       <rect>
+        <x>10</x>
+        <y>390</y>
+        <width>271</width>
+        <height>41</height>
+       </rect>
+      </property>
+      <property name="font">
+       <font>
+        <pointsize>14</pointsize>
+       </font>
+      </property>
+      <property name="styleSheet">
+       <string notr="true">background-color: rgb(255, 85, 0);</string>
+      </property>
+      <property name="text">
+       <string>Callback Yöntemi Seçiniz</string>
+      </property>
+      <property name="alignment">
+       <set>Qt::AlignCenter</set>
+      </property>
+     </widget>
+     <widget class="QLineEdit" name="leEpoch">
+      <property name="geometry">
+       <rect>
+        <x>240</x>
+        <y>260</y>
+        <width>151</width>
+        <height>41</height>
+       </rect>
+      </property>
+      <property name="font">
+       <font>
+        <pointsize>12</pointsize>
+       </font>
+      </property>
+      <property name="styleSheet">
+       <string notr="true">background-color: rgb(236, 255, 112);la</string>
+      </property>
+     </widget>
+     <widget class="QLabel" name="label_17">
+      <property name="geometry">
+       <rect>
+        <x>10</x>
+        <y>260</y>
+        <width>221</width>
+        <height>41</height>
+       </rect>
+      </property>
+      <property name="font">
+       <font>
+        <pointsize>14</pointsize>
+       </font>
+      </property>
+      <property name="styleSheet">
+       <string notr="true">background-color: rgb(255, 182, 121);</string>
+      </property>
+      <property name="text">
+       <string>Epoch değeri giriniz:</string>
+      </property>
+      <property name="alignment">
+       <set>Qt::AlignCenter</set>
+      </property>
+     </widget>
+     <widget class="QLineEdit" name="leBatchSize">
+      <property name="geometry">
+       <rect>
+        <x>270</x>
+        <y>320</y>
+        <width>151</width>
+        <height>41</height>
+       </rect>
+      </property>
+      <property name="font">
+       <font>
+        <pointsize>12</pointsize>
+       </font>
+      </property>
+      <property name="styleSheet">
+       <string notr="true">background-color: rgb(236, 255, 112);la</string>
+      </property>
+     </widget>
+     <widget class="QLabel" name="label_18">
+      <property name="geometry">
+       <rect>
+        <x>10</x>
+        <y>320</y>
+        <width>251</width>
+        <height>41</height>
+       </rect>
+      </property>
+      <property name="font">
+       <font>
+        <pointsize>14</pointsize>
+       </font>
+      </property>
+      <property name="styleSheet">
+       <string notr="true">background-color: rgb(255, 182, 121);</string>
+      </property>
+      <property name="text">
+       <string>Batch size değeri giriniz:</string>
+      </property>
+      <property name="alignment">
+       <set>Qt::AlignCenter</set>
+      </property>
+     </widget>
+     <widget class="QPushButton" name="btnTabloDoldur">
+      <property name="geometry">
+       <rect>
+        <x>250</x>
+        <y>10</y>
+        <width>221</width>
+        <height>51</height>
+       </rect>
+      </property>
+      <property name="font">
+       <font>
+        <pointsize>16</pointsize>
+       </font>
+      </property>
+      <property name="styleSheet">
+       <string notr="true">background-color:rgb(193, 193, 193)</string>
+      </property>
+      <property name="text">
+       <string>Tabloları Doldur</string>
+      </property>
+     </widget>
+     <widget class="QLabel" name="lblVeriSeti_17">
+      <property name="geometry">
+       <rect>
+        <x>10</x>
+        <y>70</y>
+        <width>331</width>
+        <height>41</height>
+       </rect>
+      </property>
+      <property name="font">
+       <font>
+        <pointsize>14</pointsize>
+       </font>
+      </property>
+      <property name="styleSheet">
+       <string notr="true">background-color:rgb(255, 170, 127)</string>
+      </property>
+      <property name="text">
+       <string>Test veri kümesi boyutu seçiniz</string>
+      </property>
+      <property name="alignment">
+       <set>Qt::AlignCenter</set>
+      </property>
+     </widget>
+     <widget class="QLabel" name="lblBoyutTest">
+      <property name="geometry">
+       <rect>
+        <x>190</x>
+        <y>120</y>
+        <width>81</width>
+        <height>41</height>
+       </rect>
+      </property>
+      <property name="font">
+       <font>
+        <pointsize>14</pointsize>
+       </font>
+      </property>
+      <property name="text">
+       <string>% 25</string>
+      </property>
+     </widget>
+     <widget class="QSlider" name="hsVeriSetiBoyutuVal">
+      <property name="geometry">
+       <rect>
+        <x>10</x>
+        <y>210</y>
+        <width>171</width>
+        <height>41</height>
+       </rect>
+      </property>
+      <property name="font">
+       <font>
+        <pointsize>8</pointsize>
+       </font>
+      </property>
+      <property name="styleSheet">
+       <string notr="true"/>
+      </property>
+      <property name="singleStep">
+       <number>5</number>
+      </property>
+      <property name="value">
+       <number>50</number>
+      </property>
+      <property name="sliderPosition">
+       <number>50</number>
+      </property>
+      <property name="orientation">
+       <enum>Qt::Horizontal</enum>
+      </property>
+      <property name="tickPosition">
+       <enum>QSlider::TicksBelow</enum>
+      </property>
+      <property name="tickInterval">
+       <number>5</number>
+      </property>
+     </widget>
+     <widget class="QLabel" name="lblBoyutVal">
+      <property name="geometry">
+       <rect>
+        <x>190</x>
+        <y>210</y>
+        <width>81</width>
+        <height>41</height>
+       </rect>
+      </property>
+      <property name="font">
+       <font>
+        <pointsize>14</pointsize>
+       </font>
+      </property>
+      <property name="text">
+       <string>% 50</string>
+      </property>
+     </widget>
+     <widget class="QLabel" name="lblVeriSeti_18">
+      <property name="geometry">
+       <rect>
+        <x>10</x>
+        <y>160</y>
+        <width>331</width>
+        <height>41</height>
+       </rect>
+      </property>
+      <property name="font">
+       <font>
+        <pointsize>14</pointsize>
+       </font>
+      </property>
+      <property name="styleSheet">
+       <string notr="true">background-color:rgb(255, 170, 127)</string>
+      </property>
+      <property name="text">
+       <string>Hold Out küme boyutu seçiniz</string>
+      </property>
+      <property name="alignment">
+       <set>Qt::AlignCenter</set>
+      </property>
+     </widget>
+     <widget class="QSlider" name="hsVeriSetiBoyutuTest">
+      <property name="geometry">
+       <rect>
+        <x>10</x>
+        <y>120</y>
+        <width>171</width>
+        <height>41</height>
+       </rect>
+      </property>
+      <property name="font">
+       <font>
+        <pointsize>8</pointsize>
+       </font>
+      </property>
+      <property name="styleSheet">
+       <string notr="true"/>
+      </property>
+      <property name="singleStep">
+       <number>5</number>
+      </property>
+      <property name="sliderPosition">
+       <number>25</number>
+      </property>
+      <property name="orientation">
+       <enum>Qt::Horizontal</enum>
+      </property>
+      <property name="tickPosition">
+       <enum>QSlider::TicksBelow</enum>
+      </property>
+      <property name="tickInterval">
+       <number>5</number>
+      </property>
+     </widget>
+     <widget class="QPushButton" name="btnGrafikEgitimLoss">
+      <property name="geometry">
+       <rect>
+        <x>180</x>
+        <y>790</y>
+        <width>151</width>
+        <height>61</height>
+       </rect>
+      </property>
+      <property name="font">
+       <font>
+        <pointsize>12</pointsize>
+       </font>
+      </property>
+      <property name="styleSheet">
+       <string notr="true">background-color:rgb(255, 57, 93)</string>
+      </property>
+      <property name="text">
+       <string>Loss Grafiği 
+Görüntüle</string>
+      </property>
+     </widget>
+     <widget class="QPushButton" name="btnConfusion">
+      <property name="geometry">
+       <rect>
+        <x>360</x>
+        <y>790</y>
+        <width>151</width>
+        <height>61</height>
+       </rect>
+      </property>
+      <property name="font">
+       <font>
+        <pointsize>12</pointsize>
+       </font>
+      </property>
+      <property name="styleSheet">
+       <string notr="true">background-color:rgb(255, 57, 93)</string>
+      </property>
+      <property name="text">
+       <string>Confusion Matrix 
+Görüntüle</string>
+      </property>
+     </widget>
+    </widget>
+    <widget class="QWidget" name="tab_3">
+     <attribute name="title">
+      <string>K-Fold Model Eğitimi</string>
+     </attribute>
+     <widget class="QLabel" name="lblSpeKFold">
+      <property name="geometry">
+       <rect>
+        <x>10</x>
+        <y>550</y>
+        <width>421</width>
+        <height>31</height>
+       </rect>
+      </property>
+      <property name="font">
+       <font>
+        <pointsize>16</pointsize>
+       </font>
+      </property>
+      <property name="styleSheet">
+       <string notr="true">color:rgb(0, 179, 27)</string>
+      </property>
+      <property name="text">
+       <string>Specificity: </string>
+      </property>
+     </widget>
+     <widget class="QLabel" name="lblACCKFold">
+      <property name="geometry">
+       <rect>
+        <x>10</x>
+        <y>470</y>
+        <width>431</width>
+        <height>31</height>
+       </rect>
+      </property>
+      <property name="font">
+       <font>
+        <pointsize>16</pointsize>
+       </font>
+      </property>
+      <property name="styleSheet">
+       <string notr="true">color:rgb(0, 179, 27)</string>
+      </property>
+      <property name="text">
+       <string>Ortalama Accuracy:</string>
+      </property>
+     </widget>
+     <widget class="QLabel" name="lblSenKFold">
+      <property name="geometry">
+       <rect>
+        <x>10</x>
+        <y>510</y>
+        <width>421</width>
+        <height>31</height>
+       </rect>
+      </property>
+      <property name="font">
+       <font>
+        <pointsize>16</pointsize>
+       </font>
+      </property>
+      <property name="styleSheet">
+       <string notr="true">color:rgb(0, 179, 27)</string>
+      </property>
+      <property name="text">
+       <string>Sensitivity:</string>
+      </property>
+     </widget>
+     <widget class="QLabel" name="lblVeriSeti_12">
+      <property name="geometry">
+       <rect>
+        <x>620</x>
+        <y>10</y>
+        <width>171</width>
+        <height>31</height>
+       </rect>
+      </property>
+      <property name="font">
+       <font>
+        <pointsize>14</pointsize>
+       </font>
+      </property>
+      <property name="styleSheet">
+       <string notr="true">background-color:rgb(255, 170, 127)</string>
+      </property>
+      <property name="text">
+       <string>K-Fold 1 X Train</string>
+      </property>
+     </widget>
+     <widget class="QLabel" name="lblVeriSeti_13">
+      <property name="geometry">
+       <rect>
+        <x>1080</x>
+        <y>10</y>
+        <width>181</width>
+        <height>31</height>
+       </rect>
+      </property>
+      <property name="font">
+       <font>
+        <pointsize>14</pointsize>
+       </font>
+      </property>
+      <property name="styleSheet">
+       <string notr="true">background-color:rgb(255, 170, 127)</string>
+      </property>
+      <property name="text">
+       <string>K-Fold 1 Y Train</string>
+      </property>
+     </widget>
+     <widget class="QTableWidget" name="tblKFold1XTrain">
+      <property name="geometry">
+       <rect>
+        <x>620</x>
+        <y>50</y>
+        <width>431</width>
+        <height>181</height>
+       </rect>
+      </property>
+      <property name="styleSheet">
+       <string notr="true">background-color:rgb(255, 255, 127);</string>
+      </property>
+     </widget>
+     <widget class="QTableWidget" name="tblKFold1YTrain">
+      <property name="geometry">
+       <rect>
+        <x>1080</x>
+        <y>50</y>
+        <width>181</width>
+        <height>181</height>
+       </rect>
+      </property>
+      <property name="styleSheet">
+       <string notr="true">background-color:rgb(255, 255, 127);</string>
+      </property>
+     </widget>
+     <widget class="QLabel" name="lblVeriSeti_14">
+      <property name="geometry">
+       <rect>
+        <x>620</x>
+        <y>240</y>
+        <width>171</width>
+        <height>21</height>
+       </rect>
+      </property>
+      <property name="font">
+       <font>
+        <pointsize>14</pointsize>
+       </font>
+      </property>
+      <property name="styleSheet">
+       <string notr="true">background-color:rgb(255, 170, 127)</string>
+      </property>
+      <property name="text">
+       <string>K-Fold 2 X Train</string>
+      </property>
+     </widget>
+     <widget class="QLabel" name="lblVeriSeti_15">
+      <property name="geometry">
+       <rect>
+        <x>1080</x>
+        <y>240</y>
+        <width>181</width>
+        <height>21</height>
+       </rect>
+      </property>
+      <property name="font">
+       <font>
+        <pointsize>14</pointsize>
+       </font>
+      </property>
+      <property name="styleSheet">
+       <string notr="true">background-color:rgb(255, 170, 127)</string>
+      </property>
+      <property name="text">
+       <string>K-Fold 2 Y Train</string>
+      </property>
+     </widget>
+     <widget class="QTableWidget" name="tblKFold2XTrain">
+      <property name="geometry">
+       <rect>
+        <x>620</x>
+        <y>270</y>
+        <width>431</width>
+        <height>181</height>
+       </rect>
+      </property>
+      <property name="styleSheet">
+       <string notr="true">background-color:rgb(255, 255, 127);</string>
+      </property>
+     </widget>
+     <widget class="QTableWidget" name="tblKFold2YTrain">
+      <property name="geometry">
+       <rect>
+        <x>1080</x>
+        <y>270</y>
+        <width>181</width>
+        <height>181</height>
+       </rect>
+      </property>
+      <property name="styleSheet">
+       <string notr="true">background-color:rgb(255, 255, 127);</string>
+      </property>
+     </widget>
+     <widget class="QLabel" name="lblVeriSeti_20">
+      <property name="geometry">
+       <rect>
+        <x>1280</x>
+        <y>10</y>
+        <width>171</width>
+        <height>31</height>
+       </rect>
+      </property>
+      <property name="font">
+       <font>
+        <pointsize>14</pointsize>
+       </font>
+      </property>
+      <property name="styleSheet">
+       <string notr="true">background-color:rgb(255, 170, 127)</string>
+      </property>
+      <property name="text">
+       <string>K-Fold 1 X Test</string>
+      </property>
+     </widget>
+     <widget class="QLabel" name="lblVeriSeti_21">
+      <property name="geometry">
+       <rect>
+        <x>1730</x>
+        <y>10</y>
+        <width>181</width>
+        <height>31</height>
+       </rect>
+      </property>
+      <property name="font">
+       <font>
+        <pointsize>14</pointsize>
+       </font>
+      </property>
+      <property name="styleSheet">
+       <string notr="true">background-color:rgb(255, 170, 127)</string>
+      </property>
+      <property name="text">
+       <string>K-Fold 1 Y Test</string>
+      </property>
+     </widget>
+     <widget class="QTableWidget" name="tblKFold1XTest">
+      <property name="geometry">
+       <rect>
+        <x>1280</x>
+        <y>50</y>
+        <width>431</width>
+        <height>181</height>
+       </rect>
+      </property>
+      <property name="styleSheet">
+       <string notr="true">background-color:rgb(255, 255, 127);</string>
+      </property>
+     </widget>
+     <widget class="QTableWidget" name="tblKFold1YTest">
+      <property name="geometry">
+       <rect>
+        <x>1730</x>
+        <y>50</y>
+        <width>181</width>
+        <height>181</height>
+       </rect>
+      </property>
+      <property name="styleSheet">
+       <string notr="true">background-color:rgb(255, 255, 127);</string>
+      </property>
+     </widget>
+     <widget class="QPushButton" name="btnModelEgitKFold">
+      <property name="geometry">
+       <rect>
+        <x>10</x>
+        <y>410</y>
+        <width>171</width>
+        <height>51</height>
+       </rect>
+      </property>
+      <property name="font">
+       <font>
+        <pointsize>16</pointsize>
+        <weight>75</weight>
+        <bold>true</bold>
+       </font>
+      </property>
+      <property name="styleSheet">
+       <string notr="true">background-color:rgb(193, 193, 193)</string>
+      </property>
+      <property name="text">
+       <string>Model Eğit</string>
+      </property>
+     </widget>
+     <widget class="QTableWidget" name="tblKFold2XTest">
+      <property name="geometry">
+       <rect>
+        <x>1280</x>
+        <y>270</y>
+        <width>431</width>
+        <height>181</height>
+       </rect>
+      </property>
+      <property name="styleSheet">
+       <string notr="true">background-color:rgb(255, 255, 127);</string>
+      </property>
+     </widget>
+     <widget class="QTableWidget" name="tblKFold2YTest">
+      <property name="geometry">
+       <rect>
+        <x>1730</x>
+        <y>270</y>
+        <width>181</width>
+        <height>181</height>
+       </rect>
+      </property>
+      <property name="styleSheet">
+       <string notr="true">background-color:rgb(255, 255, 127);</string>
+      </property>
+     </widget>
+     <widget class="QLabel" name="lblVeriSeti_22">
+      <property name="geometry">
+       <rect>
+        <x>1280</x>
+        <y>240</y>
+        <width>161</width>
+        <height>21</height>
+       </rect>
+      </property>
+      <property name="font">
+       <font>
+        <pointsize>14</pointsize>
+       </font>
+      </property>
+      <property name="styleSheet">
+       <string notr="true">background-color:rgb(255, 170, 127)</string>
+      </property>
+      <property name="text">
+       <string>K-Fold 2 X Test</string>
+      </property>
+     </widget>
+     <widget class="QLabel" name="lblVeriSeti_23">
+      <property name="geometry">
+       <rect>
+        <x>1730</x>
+        <y>240</y>
+        <width>181</width>
+        <height>21</height>
+       </rect>
+      </property>
+      <property name="font">
+       <font>
+        <pointsize>14</pointsize>
+       </font>
+      </property>
+      <property name="styleSheet">
+       <string notr="true">background-color:rgb(255, 170, 127)</string>
+      </property>
+      <property name="text">
+       <string>K-Fold 2 Y Test</string>
+      </property>
+     </widget>
+     <widget class="QLabel" name="lblVeriSeti_42">
+      <property name="geometry">
+       <rect>
+        <x>1280</x>
+        <y>460</y>
+        <width>161</width>
+        <height>21</height>
+       </rect>
+      </property>
+      <property name="font">
+       <font>
+        <pointsize>14</pointsize>
+       </font>
+      </property>
+      <property name="styleSheet">
+       <string notr="true">background-color:rgb(255, 170, 127)</string>
+      </property>
+      <property name="text">
+       <string>K-Fold 3 X Test</string>
+      </property>
+     </widget>
+     <widget class="QTableWidget" name="tblKFold3YTest">
+      <property name="geometry">
+       <rect>
+        <x>1730</x>
+        <y>490</y>
+        <width>181</width>
+        <height>181</height>
+       </rect>
+      </property>
+      <property name="styleSheet">
+       <string notr="true">background-color:rgb(255, 255, 127);</string>
+      </property>
+     </widget>
+     <widget class="QTableWidget" name="tblKFold3XTest">
+      <property name="geometry">
+       <rect>
+        <x>1280</x>
+        <y>490</y>
+        <width>431</width>
+        <height>181</height>
+       </rect>
+      </property>
+      <property name="styleSheet">
+       <string notr="true">background-color:rgb(255, 255, 127);</string>
+      </property>
+     </widget>
+     <widget class="QLabel" name="lblVeriSeti_40">
+      <property name="geometry">
+       <rect>
+        <x>620</x>
+        <y>460</y>
+        <width>171</width>
+        <height>21</height>
+       </rect>
+      </property>
+      <property name="font">
+       <font>
+        <pointsize>14</pointsize>
+       </font>
+      </property>
+      <property name="styleSheet">
+       <string notr="true">background-color:rgb(255, 170, 127)</string>
+      </property>
+      <property name="text">
+       <string>K-Fold 3 X Train</string>
+      </property>
+     </widget>
+     <widget class="QLabel" name="lblVeriSeti_41">
+      <property name="geometry">
+       <rect>
+        <x>1730</x>
+        <y>460</y>
+        <width>181</width>
+        <height>21</height>
+       </rect>
+      </property>
+      <property name="font">
+       <font>
+        <pointsize>14</pointsize>
+       </font>
+      </property>
+      <property name="styleSheet">
+       <string notr="true">background-color:rgb(255, 170, 127)</string>
+      </property>
+      <property name="text">
+       <string>K-Fold 3 Y Test</string>
+      </property>
+     </widget>
+     <widget class="QTableWidget" name="tblKFold3YTrain">
+      <property name="geometry">
+       <rect>
+        <x>1080</x>
+        <y>490</y>
+        <width>181</width>
+        <height>181</height>
+       </rect>
+      </property>
+      <property name="styleSheet">
+       <string notr="true">background-color:rgb(255, 255, 127);</string>
+      </property>
+     </widget>
+     <widget class="QTableWidget" name="tblKFold3XTrain">
+      <property name="geometry">
+       <rect>
+        <x>620</x>
+        <y>490</y>
+        <width>431</width>
+        <height>181</height>
+       </rect>
+      </property>
+      <property name="styleSheet">
+       <string notr="true">background-color:rgb(255, 255, 127);</string>
+      </property>
+     </widget>
+     <widget class="QLabel" name="lblVeriSeti_39">
+      <property name="geometry">
+       <rect>
+        <x>1080</x>
+        <y>460</y>
+        <width>181</width>
+        <height>21</height>
+       </rect>
+      </property>
+      <property name="font">
+       <font>
+        <pointsize>14</pointsize>
+       </font>
+      </property>
+      <property name="styleSheet">
+       <string notr="true">background-color:rgb(255, 170, 127)</string>
+      </property>
+      <property name="text">
+       <string>K-Fold 3 Y Train</string>
+      </property>
+     </widget>
+     <widget class="QLabel" name="lblVeriSeti_43">
+      <property name="geometry">
+       <rect>
+        <x>1080</x>
+        <y>680</y>
+        <width>181</width>
+        <height>21</height>
+       </rect>
+      </property>
+      <property name="font">
+       <font>
+        <pointsize>14</pointsize>
+       </font>
+      </property>
+      <property name="styleSheet">
+       <string notr="true">background-color:rgb(255, 170, 127)</string>
+      </property>
+      <property name="text">
+       <string>K-Fold 4 Y Train</string>
+      </property>
+     </widget>
+     <widget class="QTableWidget" name="tblKFold4YTest">
+      <property name="geometry">
+       <rect>
+        <x>1730</x>
+        <y>710</y>
+        <width>181</width>
+        <height>181</height>
+       </rect>
+      </property>
+      <property name="styleSheet">
+       <string notr="true">background-color:rgb(255, 255, 127);</string>
+      </property>
+     </widget>
+     <widget class="QTableWidget" name="tblKFold4XTrain">
+      <property name="geometry">
+       <rect>
+        <x>620</x>
+        <y>710</y>
+        <width>431</width>
+        <height>181</height>
+       </rect>
+      </property>
+      <property name="styleSheet">
+       <string notr="true">background-color:rgb(255, 255, 127);</string>
+      </property>
+     </widget>
+     <widget class="QLabel" name="lblVeriSeti_44">
+      <property name="geometry">
+       <rect>
+        <x>620</x>
+        <y>680</y>
+        <width>171</width>
+        <height>21</height>
+       </rect>
+      </property>
+      <property name="font">
+       <font>
+        <pointsize>14</pointsize>
+       </font>
+      </property>
+      <property name="styleSheet">
+       <string notr="true">background-color:rgb(255, 170, 127)</string>
+      </property>
+      <property name="text">
+       <string>K-Fold 4 X Train</string>
+      </property>
+     </widget>
+     <widget class="QTableWidget" name="tblKFold4XTest">
+      <property name="geometry">
+       <rect>
+        <x>1280</x>
+        <y>710</y>
+        <width>431</width>
+        <height>181</height>
+       </rect>
+      </property>
+      <property name="styleSheet">
+       <string notr="true">background-color:rgb(255, 255, 127);</string>
+      </property>
+     </widget>
+     <widget class="QLabel" name="lblVeriSeti_45">
+      <property name="geometry">
+       <rect>
+        <x>1730</x>
+        <y>680</y>
+        <width>181</width>
+        <height>21</height>
+       </rect>
+      </property>
+      <property name="font">
+       <font>
+        <pointsize>14</pointsize>
+       </font>
+      </property>
+      <property name="styleSheet">
+       <string notr="true">background-color:rgb(255, 170, 127)</string>
+      </property>
+      <property name="text">
+       <string>K-Fold 4 Y Test</string>
+      </property>
+     </widget>
+     <widget class="QTableWidget" name="tblKFold4YTrain">
+      <property name="geometry">
+       <rect>
+        <x>1080</x>
+        <y>710</y>
+        <width>181</width>
+        <height>181</height>
+       </rect>
+      </property>
+      <property name="styleSheet">
+       <string notr="true">background-color:rgb(255, 255, 127);</string>
+      </property>
+     </widget>
+     <widget class="QLabel" name="lblVeriSeti_46">
+      <property name="geometry">
+       <rect>
+        <x>1280</x>
+        <y>680</y>
+        <width>161</width>
+        <height>21</height>
+       </rect>
+      </property>
+      <property name="font">
+       <font>
+        <pointsize>14</pointsize>
+       </font>
+      </property>
+      <property name="styleSheet">
+       <string notr="true">background-color:rgb(255, 170, 127)</string>
+      </property>
+      <property name="text">
+       <string>K-Fold 4 X Test</string>
+      </property>
+     </widget>
+     <widget class="QLabel" name="lblFold1">
+      <property name="geometry">
+       <rect>
+        <x>460</x>
+        <y>70</y>
+        <width>151</width>
+        <height>31</height>
+       </rect>
+      </property>
+      <property name="font">
+       <font>
+        <pointsize>12</pointsize>
+       </font>
+      </property>
+      <property name="styleSheet">
+       <string notr="true">color: rgb(65, 159, 112)</string>
+      </property>
+      <property name="text">
+       <string/>
+      </property>
+     </widget>
+     <widget class="QLabel" name="lblFold2">
+      <property name="geometry">
+       <rect>
+        <x>460</x>
+        <y>280</y>
+        <width>151</width>
+        <height>31</height>
+       </rect>
+      </property>
+      <property name="font">
+       <font>
+        <pointsize>12</pointsize>
+       </font>
+      </property>
+      <property name="styleSheet">
+       <string notr="true">color: rgb(65, 159, 112)</string>
+      </property>
+      <property name="text">
+       <string/>
+      </property>
+     </widget>
+     <widget class="QLabel" name="lblFold3">
+      <property name="geometry">
+       <rect>
+        <x>460</x>
+        <y>500</y>
+        <width>151</width>
+        <height>31</height>
+       </rect>
+      </property>
+      <property name="font">
+       <font>
+        <pointsize>12</pointsize>
+       </font>
+      </property>
+      <property name="styleSheet">
+       <string notr="true">color: rgb(65, 159, 112)</string>
+      </property>
+      <property name="text">
+       <string/>
+      </property>
+     </widget>
+     <widget class="QLabel" name="lblFold4">
+      <property name="geometry">
+       <rect>
+        <x>510</x>
+        <y>720</y>
+        <width>101</width>
+        <height>31</height>
+       </rect>
+      </property>
+      <property name="font">
+       <font>
+        <pointsize>12</pointsize>
+       </font>
+      </property>
+      <property name="styleSheet">
+       <string notr="true">color: rgb(65, 159, 112)</string>
+      </property>
+      <property name="text">
+       <string/>
+      </property>
+     </widget>
+     <widget class="QPushButton" name="btnConfusionKFold1">
+      <property name="geometry">
+       <rect>
+        <x>10</x>
+        <y>610</y>
+        <width>141</width>
+        <height>61</height>
+       </rect>
+      </property>
+      <property name="font">
+       <font>
+        <pointsize>10</pointsize>
+        <weight>50</weight>
+        <bold>false</bold>
+       </font>
+      </property>
+      <property name="styleSheet">
+       <string notr="true">background-color:rgb(255, 57, 93)</string>
+      </property>
+      <property name="text">
+       <string>KFold-1 Confusion 
+Matrix Görüntüle</string>
+      </property>
+     </widget>
+     <widget class="QPushButton" name="btnConfusionKFold2">
+      <property name="geometry">
+       <rect>
+        <x>10</x>
+        <y>680</y>
+        <width>141</width>
+        <height>61</height>
+       </rect>
+      </property>
+      <property name="font">
+       <font>
+        <pointsize>10</pointsize>
+       </font>
+      </property>
+      <property name="styleSheet">
+       <string notr="true">background-color:rgb(255, 57, 93)</string>
+      </property>
+      <property name="text">
+       <string>KFold-2 Confusion 
+Matrix Görüntüle</string>
+      </property>
+     </widget>
+     <widget class="QPushButton" name="btnConfusionKFold3">
+      <property name="geometry">
+       <rect>
+        <x>10</x>
+        <y>750</y>
+        <width>141</width>
+        <height>61</height>
+       </rect>
+      </property>
+      <property name="font">
+       <font>
+        <pointsize>10</pointsize>
+       </font>
+      </property>
+      <property name="styleSheet">
+       <string notr="true">background-color:rgb(255, 57, 93)</string>
+      </property>
+      <property name="text">
+       <string>KFold-3 Confusion 
+Matrix Görüntüle</string>
+      </property>
+     </widget>
+     <widget class="QPushButton" name="btnConfusionKFold4">
+      <property name="geometry">
+       <rect>
+        <x>10</x>
+        <y>820</y>
+        <width>141</width>
+        <height>61</height>
+       </rect>
+      </property>
+      <property name="font">
+       <font>
+        <pointsize>10</pointsize>
+        <weight>50</weight>
+        <bold>false</bold>
+       </font>
+      </property>
+      <property name="styleSheet">
+       <string notr="true">background-color:rgb(255, 57, 93)</string>
+      </property>
+      <property name="text">
+       <string>KFold-4 Confusion 
+Matrix Görüntüle</string>
+      </property>
+     </widget>
+     <widget class="QLabel" name="label_19">
+      <property name="geometry">
+       <rect>
+        <x>10</x>
+        <y>70</y>
+        <width>221</width>
+        <height>41</height>
+       </rect>
+      </property>
+      <property name="font">
+       <font>
+        <pointsize>14</pointsize>
+       </font>
+      </property>
+      <property name="styleSheet">
+       <string notr="true">background-color: rgb(255, 182, 121);</string>
+      </property>
+      <property name="text">
+       <string>Epoch değeri giriniz:</string>
+      </property>
+      <property name="alignment">
+       <set>Qt::AlignCenter</set>
+      </property>
+     </widget>
+     <widget class="QGroupBox" name="groupBox_5">
+      <property name="geometry">
+       <rect>
+        <x>10</x>
+        <y>240</y>
+        <width>351</width>
+        <height>61</height>
+       </rect>
+      </property>
+      <property name="title">
+       <string/>
+      </property>
+      <widget class="QRadioButton" name="rbModelCheckpointKFold">
+       <property name="geometry">
+        <rect>
+         <x>10</x>
+         <y>20</y>
+         <width>161</width>
+         <height>20</height>
+        </rect>
+       </property>
+       <property name="font">
+        <font>
+         <pointsize>10</pointsize>
+        </font>
+       </property>
+       <property name="text">
+        <string>Model Checkpoint</string>
+       </property>
+      </widget>
+      <widget class="QRadioButton" name="rbErkenDurdurmaKFold">
+       <property name="geometry">
+        <rect>
+         <x>190</x>
+         <y>20</y>
+         <width>131</width>
+         <height>20</height>
+        </rect>
+       </property>
+       <property name="font">
+        <font>
+         <pointsize>10</pointsize>
+        </font>
+       </property>
+       <property name="text">
+        <string>Early Stopping</string>
+       </property>
+      </widget>
+     </widget>
+     <widget class="QPushButton" name="btnveriSetiKFold">
+      <property name="geometry">
+       <rect>
+        <x>10</x>
+        <y>0</y>
+        <width>221</width>
+        <height>51</height>
+       </rect>
+      </property>
+      <property name="font">
+       <font>
+        <pointsize>16</pointsize>
+       </font>
+      </property>
+      <property name="styleSheet">
+       <string notr="true">background-color:rgb(193, 193, 193)</string>
+      </property>
+      <property name="text">
+       <string>Veri Seti Oluştur</string>
+      </property>
+     </widget>
+     <widget class="QLabel" name="label_20">
+      <property name="geometry">
+       <rect>
+        <x>10</x>
+        <y>130</y>
+        <width>251</width>
+        <height>41</height>
+       </rect>
+      </property>
+      <property name="font">
+       <font>
+        <pointsize>14</pointsize>
+       </font>
+      </property>
+      <property name="styleSheet">
+       <string notr="true">background-color: rgb(255, 182, 121);</string>
+      </property>
+      <property name="text">
+       <string>Batch size değeri giriniz:</string>
+      </property>
+      <property name="alignment">
+       <set>Qt::AlignCenter</set>
+      </property>
+     </widget>
+     <widget class="QLabel" name="label_21">
+      <property name="geometry">
+       <rect>
+        <x>10</x>
+        <y>200</y>
+        <width>271</width>
+        <height>41</height>
+       </rect>
+      </property>
+      <property name="font">
+       <font>
+        <pointsize>14</pointsize>
+       </font>
+      </property>
+      <property name="styleSheet">
+       <string notr="true">background-color: rgb(255, 85, 0);</string>
+      </property>
+      <property name="text">
+       <string>Callback Yöntemi Seçiniz</string>
+      </property>
+      <property name="alignment">
+       <set>Qt::AlignCenter</set>
+      </property>
+     </widget>
+     <widget class="QLineEdit" name="leBatchSizeKFold">
+      <property name="geometry">
+       <rect>
+        <x>270</x>
+        <y>130</y>
+        <width>151</width>
+        <height>41</height>
+       </rect>
+      </property>
+      <property name="font">
+       <font>
+        <pointsize>12</pointsize>
+       </font>
+      </property>
+      <property name="styleSheet">
+       <string notr="true">background-color: rgb(236, 255, 112);la</string>
+      </property>
+     </widget>
+     <widget class="QLineEdit" name="leEpochKFold">
+      <property name="geometry">
+       <rect>
+        <x>240</x>
+        <y>70</y>
+        <width>151</width>
+        <height>41</height>
+       </rect>
+      </property>
+      <property name="font">
+       <font>
+        <pointsize>12</pointsize>
+       </font>
+      </property>
+      <property name="styleSheet">
+       <string notr="true">background-color: rgb(236, 255, 112);la</string>
+      </property>
+     </widget>
+     <widget class="QComboBox" name="cmbModelKFold">
+      <property name="geometry">
+       <rect>
+        <x>10</x>
+        <y>360</y>
+        <width>261</width>
+        <height>41</height>
+       </rect>
+      </property>
+      <property name="font">
+       <font>
+        <pointsize>14</pointsize>
+       </font>
+      </property>
+      <property name="styleSheet">
+       <string notr="true">background-color: rgb(236, 255, 112);</string>
+      </property>
+      <property name="currentText">
+       <string>Benim CNN Modelim</string>
+      </property>
+      <item>
+       <property name="text">
+        <string>Benim CNN Modelim</string>
+       </property>
+      </item>
+      <item>
+       <property name="text">
+        <string>ResNet50</string>
+       </property>
+      </item>
+      <item>
+       <property name="text">
+        <string>VGG16</string>
+       </property>
+      </item>
+     </widget>
+     <widget class="QLabel" name="label_3">
+      <property name="geometry">
+       <rect>
+        <x>10</x>
+        <y>310</y>
+        <width>161</width>
+        <height>41</height>
+       </rect>
+      </property>
+      <property name="font">
+       <font>
+        <pointsize>14</pointsize>
+       </font>
+      </property>
+      <property name="styleSheet">
+       <string notr="true">background-color:rgb(255, 57, 77)</string>
+      </property>
+      <property name="text">
+       <string>Model Seçiniz</string>
+      </property>
+      <property name="alignment">
+       <set>Qt::AlignCenter</set>
+      </property>
+     </widget>
+     <widget class="QPushButton" name="btnACCKFold2">
+      <property name="geometry">
+       <rect>
+        <x>160</x>
+        <y>680</y>
+        <width>151</width>
+        <height>61</height>
+       </rect>
+      </property>
+      <property name="font">
+       <font>
+        <pointsize>10</pointsize>
+        <weight>50</weight>
+        <bold>false</bold>
+       </font>
+      </property>
+      <property name="styleSheet">
+       <string notr="true">background-color:rgb(255, 57, 93)</string>
+      </property>
+      <property name="text">
+       <string>KFold-2 ACC 
+Grafiği Görüntüle</string>
+      </property>
+     </widget>
+     <widget class="QPushButton" name="btnACCKFold4">
+      <property name="geometry">
+       <rect>
+        <x>160</x>
+        <y>820</y>
+        <width>151</width>
+        <height>61</height>
+       </rect>
+      </property>
+      <property name="font">
+       <font>
+        <pointsize>10</pointsize>
+        <weight>50</weight>
+        <bold>false</bold>
+       </font>
+      </property>
+      <property name="styleSheet">
+       <string notr="true">background-color:rgb(255, 57, 93)</string>
+      </property>
+      <property name="text">
+       <string>KFold-4 ACC 
+Grafiği Görüntüle</string>
+      </property>
+     </widget>
+     <widget class="QPushButton" name="btnACCKFold3">
+      <property name="geometry">
+       <rect>
+        <x>160</x>
+        <y>750</y>
+        <width>151</width>
+        <height>61</height>
+       </rect>
+      </property>
+      <property name="font">
+       <font>
+        <pointsize>10</pointsize>
+        <weight>50</weight>
+        <bold>false</bold>
+       </font>
+      </property>
+      <property name="styleSheet">
+       <string notr="true">background-color:rgb(255, 57, 93)</string>
+      </property>
+      <property name="text">
+       <string>KFold-3 ACC 
+Grafiği Görüntüle</string>
+      </property>
+     </widget>
+     <widget class="QPushButton" name="btnACCKFold1">
+      <property name="geometry">
+       <rect>
+        <x>160</x>
+        <y>610</y>
+        <width>151</width>
+        <height>61</height>
+       </rect>
+      </property>
+      <property name="font">
+       <font>
+        <pointsize>10</pointsize>
+        <weight>50</weight>
+        <bold>false</bold>
+       </font>
+      </property>
+      <property name="styleSheet">
+       <string notr="true">background-color:rgb(255, 57, 93)</string>
+      </property>
+      <property name="text">
+       <string>KFold-1 ACC 
+Grafiği Görüntüle</string>
+      </property>
+     </widget>
+     <widget class="QPushButton" name="btnLossKFold1">
+      <property name="geometry">
+       <rect>
+        <x>320</x>
+        <y>610</y>
+        <width>151</width>
+        <height>61</height>
+       </rect>
+      </property>
+      <property name="font">
+       <font>
+        <pointsize>10</pointsize>
+        <weight>50</weight>
+        <bold>false</bold>
+       </font>
+      </property>
+      <property name="styleSheet">
+       <string notr="true">background-color:rgb(255, 57, 93)</string>
+      </property>
+      <property name="text">
+       <string>KFold-1 Loss 
+Grafiği Görüntüle</string>
+      </property>
+     </widget>
+     <widget class="QPushButton" name="btnLossKFold3">
+      <property name="geometry">
+       <rect>
+        <x>320</x>
+        <y>750</y>
+        <width>151</width>
+        <height>61</height>
+       </rect>
+      </property>
+      <property name="font">
+       <font>
+        <pointsize>10</pointsize>
+        <weight>50</weight>
+        <bold>false</bold>
+       </font>
+      </property>
+      <property name="styleSheet">
+       <string notr="true">background-color:rgb(255, 57, 93)</string>
+      </property>
+      <property name="text">
+       <string>KFold-3 Loss 
+Grafiği Görüntüle</string>
+      </property>
+     </widget>
+     <widget class="QPushButton" name="btnLossKFold4">
+      <property name="geometry">
+       <rect>
+        <x>320</x>
+        <y>820</y>
+        <width>151</width>
+        <height>61</height>
+       </rect>
+      </property>
+      <property name="font">
+       <font>
+        <pointsize>10</pointsize>
+        <weight>50</weight>
+        <bold>false</bold>
+       </font>
+      </property>
+      <property name="styleSheet">
+       <string notr="true">background-color:rgb(255, 57, 93)</string>
+      </property>
+      <property name="text">
+       <string>KFold-4 Loss 
+Grafiği Görüntüle</string>
+      </property>
+     </widget>
+     <widget class="QPushButton" name="btnLossKFold2">
+      <property name="geometry">
+       <rect>
+        <x>320</x>
+        <y>680</y>
+        <width>151</width>
+        <height>61</height>
+       </rect>
+      </property>
+      <property name="font">
+       <font>
+        <pointsize>10</pointsize>
+        <weight>50</weight>
+        <bold>false</bold>
+       </font>
+      </property>
+      <property name="styleSheet">
+       <string notr="true">background-color:rgb(255, 57, 93)</string>
+      </property>
+      <property name="text">
+       <string>KFold-2 Loss 
+Grafiği Görüntüle</string>
+      </property>
+     </widget>
+    </widget>
+    <widget class="QWidget" name="tab_2">
+     <attribute name="title">
+      <string>Model Tahmin</string>
+     </attribute>
+     <widget class="QLabel" name="label_5">
+      <property name="geometry">
+       <rect>
+        <x>10</x>
+        <y>10</y>
+        <width>521</width>
+        <height>31</height>
+       </rect>
+      </property>
+      <property name="font">
+       <font>
+        <pointsize>16</pointsize>
+       </font>
+      </property>
+      <property name="styleSheet">
+       <string notr="true">background-color: rgb(103, 206, 0);</string>
+      </property>
+      <property name="text">
+       <string>Tahmin işlemi gerçekleşecek modeli seçiniz:</string>
+      </property>
+     </widget>
+     <widget class="QComboBox" name="cmbModelTahmin">
+      <property name="geometry">
+       <rect>
+        <x>10</x>
+        <y>60</y>
+        <width>261</width>
+        <height>41</height>
+       </rect>
+      </property>
+      <property name="font">
+       <font>
+        <pointsize>14</pointsize>
+       </font>
+      </property>
+      <property name="styleSheet">
+       <string notr="true">background-color: rgb(236, 255, 112);</string>
+      </property>
+      <property name="currentText">
+       <string>Benim CNN Modelim</string>
+      </property>
+      <item>
+       <property name="text">
+        <string>Benim CNN Modelim</string>
+       </property>
+      </item>
+      <item>
+       <property name="text">
+        <string>ResNet50</string>
+       </property>
+      </item>
+      <item>
+       <property name="text">
+        <string>VGG16</string>
+       </property>
+      </item>
+     </widget>
+     <widget class="QLabel" name="label_15">
+      <property name="geometry">
+       <rect>
+        <x>10</x>
+        <y>460</y>
+        <width>261</width>
+        <height>51</height>
+       </rect>
+      </property>
+      <property name="font">
+       <font>
+        <pointsize>20</pointsize>
+       </font>
+      </property>
+      <property name="styleSheet">
+       <string notr="true">background-color: rgb(103, 206, 0);</string>
+      </property>
+      <property name="text">
+       <string>Tahmin Sonucu:</string>
+      </property>
+      <property name="alignment">
+       <set>Qt::AlignCenter</set>
+      </property>
+     </widget>
+     <widget class="QPushButton" name="btnTahminEt">
+      <property name="geometry">
+       <rect>
+        <x>10</x>
+        <y>380</y>
+        <width>361</width>
+        <height>51</height>
+       </rect>
+      </property>
+      <property name="font">
+       <font>
+        <pointsize>14</pointsize>
+        <weight>75</weight>
+        <bold>true</bold>
+       </font>
+      </property>
+      <property name="styleSheet">
+       <string notr="true">color:rgb(255, 79, 48);
+background-color:rgb(193, 193, 193);</string>
+      </property>
+      <property name="text">
+       <string>Tahmin İşlemini Gerçekleştir</string>
+      </property>
+     </widget>
+     <widget class="QLabel" name="lblSonuc">
+      <property name="geometry">
+       <rect>
+        <x>300</x>
+        <y>460</y>
+        <width>301</width>
+        <height>51</height>
+       </rect>
+      </property>
+      <property name="font">
+       <font>
+        <pointsize>20</pointsize>
+       </font>
+      </property>
+      <property name="styleSheet">
+       <string notr="true">background-color: rgb(103, 206, 0);</string>
+      </property>
+      <property name="text">
+       <string/>
+      </property>
+      <property name="alignment">
+       <set>Qt::AlignCenter</set>
+      </property>
+     </widget>
+     <widget class="QPushButton" name="btnGorselSec">
+      <property name="geometry">
+       <rect>
+        <x>10</x>
+        <y>110</y>
+        <width>301</width>
+        <height>51</height>
+       </rect>
+      </property>
+      <property name="font">
+       <font>
+        <pointsize>14</pointsize>
+        <weight>75</weight>
+        <bold>true</bold>
+       </font>
+      </property>
+      <property name="styleSheet">
+       <string notr="true">color:rgb(255, 79, 48);
+background-color:rgb(193, 193, 193);</string>
+      </property>
+      <property name="text">
+       <string>Tahmin Görseli Seçiniz</string>
+      </property>
+     </widget>
+     <widget class="QLabel" name="lblGorsel">
+      <property name="geometry">
+       <rect>
+        <x>20</x>
+        <y>180</y>
+        <width>331</width>
+        <height>181</height>
+       </rect>
+      </property>
+      <property name="text">
+       <string/>
+      </property>
+      <property name="scaledContents">
+       <bool>true</bool>
+      </property>
+     </widget>
+    </widget>
+   </widget>
+  </widget>
+  <widget class="QMenuBar" name="menubar">
+   <property name="geometry">
+    <rect>
+     <x>0</x>
+     <y>0</y>
+     <width>2023</width>
+     <height>26</height>
+    </rect>
+   </property>
+  </widget>
+  <widget class="QStatusBar" name="statusbar"/>
+ </widget>
+ <resources/>
+ <connections/>
+</ui>
